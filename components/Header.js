@@ -1,5 +1,6 @@
 import { MicrophoneIcon, SearchIcon, XIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/dist/client/router";
+import { route } from "next/dist/server/router";
 import Image from "next/image";
 import { useRef } from "react";
 import Avatar from "./Avatar";
@@ -34,6 +35,7 @@ function Header() {
             type="text"
             className="flex-grow w-full focus:outline-none"
             ref={searchRefInput}
+            defaultValue={router.query.term}
           />
           <XIcon
             className="cursor-pointer to-gray-500 h-7 sm:mr-3 transition duration-100 transform hover:scale-125"
